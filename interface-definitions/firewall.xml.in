@@ -763,6 +763,37 @@
         </properties>
         <defaultValue>disable</defaultValue>
       </leafNode>
+      <node name="default-policy">
+        <properties>
+          <help>Global firewall policy</help>
+        </properties>
+        <children>
+          <node name="in">
+            <properties>
+              <help>Global firewall policy for inbound packets</help>
+            </properties>
+            <children>
+              #include <include/firewall/action-accept-drop-reject.xml.i>
+            </children>
+          </node>
+          <node name="local">
+            <properties>
+              <help>Global firewall policy for packets destined for this router</help>
+            </properties>
+            <children>
+              #include <include/firewall/action-accept-drop-reject.xml.i>
+            </children>
+          </node>
+          <node name="out">
+            <properties>
+              <help>Global firewall policy for outbound packets</help>
+            </properties>
+            <children>
+              #include <include/firewall/action-accept-drop-reject.xml.i>
+            </children>
+          </node>
+        </children>
+      </node>
       <node name="state-policy">
         <properties>
           <help>Global firewall state-policy</help>
